@@ -1,0 +1,33 @@
+@mixin bgc($bgcolor) {
+    background-color: $bgcolor;
+}
+@mixin size($width, $hight: $width) {
+    width: $width;
+    height: $hight;
+}
+@mixin fonticon() {
+    font-size: $mediumsize;
+    @include size(16);
+}
+@mixin absoluteCenter($direction: "left") {
+    position: absolute;
+    @if ($direction == "left") {
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+    }
+    @if ($direction == "right") {
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+    }
+    @if ($direction == "top") {
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    @if ($direction == "both") {
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
